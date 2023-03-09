@@ -1,0 +1,2042 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "MTG_Financial.Application API",
+    "version": "v1"
+  },
+  "paths": {
+    "/api/mediator/Auth/CreateRole": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "新增角色",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateRoleCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultModelProcResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/mediator/Auth/CreateRoleProgram": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "新增角色程式",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateRoleProgramCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultModelProcResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/mediator/Auth/DeleteRole": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "刪除角色",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteRoleCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultModelProcResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/mediator/Auth/DeleteRoleProgram": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "刪除角色程式",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteRoleProgramCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultModelProcResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/mediator/Auth/UpdateRole": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "更新角色",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateRoleCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultModelProcResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/mediator/Auth/GetPrograms": {
+      "get": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "取得所有程式",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultModelListProgramDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/mediator/Auth/GetRolePrograms": {
+      "get": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "取得角色底下的程式",
+        "parameters": [
+          {
+            "name": "ROLE_ID",
+            "in": "query",
+            "style": "form",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultModelListAppRolePrgDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/mediator/Auth/GetRoles": {
+      "get": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "取得所有角色",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultModelListAppRoleDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/mediator/Auth/GetUserInfo": {
+      "get": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "取得使用者資訊",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultModelUserDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/mediator/Code/UpdateCode": {
+      "post": {
+        "tags": [
+          "Code"
+        ],
+        "summary": "更新代碼",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateCodeCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultModelProcResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/mediator/Code/GetCodes": {
+      "get": {
+        "tags": [
+          "Code"
+        ],
+        "summary": "取得所有代碼",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultModelListCodeDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/mediator/MainData/Delete": {
+      "post": {
+        "tags": [
+          "MainData"
+        ],
+        "summary": "刪除主要資料",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultModelProcResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/mediator/MainData/Import": {
+      "post": {
+        "tags": [
+          "MainData"
+        ],
+        "summary": "匯入資料",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultModelProcResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/mediator/MainData/GetDeletePreview": {
+      "post": {
+        "tags": [
+          "MainData"
+        ],
+        "summary": "取得刪除財務前資料",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetDeletePreviewRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultModelListMainDataDeletePreviewDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/mediator/Option/GetCompanyOptions": {
+      "get": {
+        "tags": [
+          "Option"
+        ],
+        "summary": "取得公司選項",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultModelListCompanyOptionDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/mediator/Option/GetExportReportOptions": {
+      "get": {
+        "tags": [
+          "Option"
+        ],
+        "summary": "取得下拉選項 - 匯出報表",
+        "parameters": [
+          {
+            "name": "TRG_TYPE",
+            "in": "query",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultModelListExportReportOptionDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/mediator/Option/GetExportValueOptions": {
+      "get": {
+        "tags": [
+          "Option"
+        ],
+        "summary": "取得匯出資料下拉選項",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultModelListExportValueOptionDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/mediator/Option/GetImportOptions": {
+      "get": {
+        "tags": [
+          "Option"
+        ],
+        "summary": "取得匯入資料下拉選項",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultModelListImportOptionDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/mediator/Option/GetPeriodYears": {
+      "get": {
+        "tags": [
+          "Option"
+        ],
+        "summary": " 取得下拉選項 - 年度",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultModelListPeriodYearDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/mediator/Org/CreateCompany": {
+      "post": {
+        "tags": [
+          "Org"
+        ],
+        "summary": "新增公司",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCompanyCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultModelProcResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/mediator/Org/CreateDept": {
+      "post": {
+        "tags": [
+          "Org"
+        ],
+        "summary": "新增部門",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateDeptCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultModelProcResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/mediator/Org/CreateLoginUser": {
+      "post": {
+        "tags": [
+          "Org"
+        ],
+        "summary": "新增登入者資訊",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateLoginUserCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultModelProcResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/mediator/Org/DeleteCompany": {
+      "post": {
+        "tags": [
+          "Org"
+        ],
+        "summary": "刪除公司",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteCompanyCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultModelProcResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/mediator/Org/DeleteDept": {
+      "post": {
+        "tags": [
+          "Org"
+        ],
+        "summary": "刪除部門",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteDeptCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultModelProcResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/mediator/Org/DeleteLoginUser": {
+      "post": {
+        "tags": [
+          "Org"
+        ],
+        "summary": "刪除登入者資訊",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteLoginUserCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultModelProcResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/mediator/Org/MoveDept": {
+      "post": {
+        "tags": [
+          "Org"
+        ],
+        "summary": "移動部門",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MoveDeptCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultModelProcResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/mediator/Org/UpdateCompany": {
+      "post": {
+        "tags": [
+          "Org"
+        ],
+        "summary": "更新公司",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateCompanyCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultModelProcResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/mediator/Org/UpdateDept": {
+      "post": {
+        "tags": [
+          "Org"
+        ],
+        "summary": "修改部門",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateDeptCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultModelProcResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/mediator/Org/UpdateLoginUser": {
+      "post": {
+        "tags": [
+          "Org"
+        ],
+        "summary": "更新登入者資訊",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateLoginUserCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultModelProcResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/mediator/Org/GetCompanies": {
+      "post": {
+        "tags": [
+          "Org"
+        ],
+        "summary": "取得所有公司",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetCompaniesRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultModelListCompanyDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/mediator/Org/GetDepartments": {
+      "post": {
+        "tags": [
+          "Org"
+        ],
+        "summary": "取得所有部門",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetDepartmentsRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultModelListDeptDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/mediator/Org/GetLoginUsers": {
+      "get": {
+        "tags": [
+          "Org"
+        ],
+        "summary": "取得所有可以登入的人員",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultModelListLoginUserDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/mediator/Report/Export": {
+      "post": {
+        "tags": [
+          "Report"
+        ],
+        "summary": "財務資料匯出",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExportRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultModelExportFileResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AppRoleDto": {
+        "properties": {
+          "ID": {
+            "type": "integer"
+          },
+          "ROLE_NAME": {
+            "type": "string"
+          },
+          "DESCRIP": {
+            "type": "string"
+          },
+          "IS_SYSPRG": {
+            "type": "boolean"
+          }
+        }
+      },
+      "AppRolePrgDto": {
+        "properties": {
+          "ID": {
+            "type": "integer"
+          },
+          "APPROLE_ID": {
+            "type": "integer"
+          },
+          "SYSPRG_ID": {
+            "type": "integer"
+          },
+          "PRG_NAME": {
+            "type": "string"
+          },
+          "IS_SYSPRG": {
+            "type": "boolean"
+          }
+        }
+      },
+      "CodeDto": {
+        "properties": {
+          "CODE_ID": {
+            "type": "string"
+          },
+          "CKIND": {
+            "type": "string"
+          },
+          "CODE_NO": {
+            "type": "string"
+          },
+          "CODE_NAME": {
+            "type": "string"
+          },
+          "CODE_VALUE": {
+            "type": "string"
+          },
+          "CODE_VALUE2": {
+            "type": "string"
+          },
+          "CKIND_NAME": {
+            "type": "string"
+          }
+        }
+      },
+      "CompanyDto": {
+        "properties": {
+          "ID": {
+            "type": "integer"
+          },
+          "COMP_NAME": {
+            "type": "string"
+          },
+          "ORDER_NUM": {
+            "type": "integer"
+          },
+          "OPEN_DATE": {
+            "type": "string"
+          },
+          "EXPIR_DATE": {
+            "type": "string"
+          }
+        }
+      },
+      "CompanyOptionDto": {
+        "properties": {
+          "ID": {
+            "type": "integer"
+          },
+          "COMP_NAME": {
+            "type": "string"
+          }
+        }
+      },
+      "CreateCompanyCommand": {
+        "required": [
+          "COMP_NAME"
+        ],
+        "type": "object",
+        "properties": {
+          "COMP_NAME": {
+            "type": "string"
+          },
+          "ORDER_NUM": {
+            "type": "integer"
+          },
+          "OPEN_DATE": {
+            "type": "string"
+          },
+          "EXPIR_DATE": {
+            "type": "string"
+          }
+        }
+      },
+      "CreateDeptCommand": {
+        "required": [
+          "DEP_NAME"
+        ],
+        "type": "object",
+        "properties": {
+          "DEP_NAME": {
+            "type": "string"
+          },
+          "PARENT_ID": {
+            "type": "integer"
+          },
+          "DESCRIP": {
+            "type": "string"
+          },
+          "ORDER_NUM": {
+            "type": "integer"
+          },
+          "OPEN_DATE": {
+            "type": "string"
+          },
+          "EXPIR_DATE": {
+            "type": "string"
+          }
+        }
+      },
+      "CreateLoginUserCommand": {
+        "required": [
+          "LOGIN_ID"
+        ],
+        "type": "object",
+        "properties": {
+          "LOGIN_ID": {
+            "type": "string"
+          },
+          "USER_IN_ROLE": {
+            "type": "string"
+          },
+          "USER_IN_COMPANY": {
+            "type": "string"
+          }
+        }
+      },
+      "CreateRoleCommand": {
+        "required": [
+          "ROLE_NAME"
+        ],
+        "type": "object",
+        "properties": {
+          "ID": {
+            "type": "integer"
+          },
+          "ROLE_NAME": {
+            "type": "string"
+          },
+          "DESCRIP": {
+            "type": "string"
+          },
+          "IS_SYSPRG": {
+            "type": "boolean"
+          }
+        }
+      },
+      "CreateRoleProgramCommand": {
+        "type": "object",
+        "properties": {
+          "APPROLE_ID": {
+            "type": "integer"
+          },
+          "SYSPRG_ID": {
+            "type": "integer"
+          }
+        }
+      },
+      "DeleteCommand": {
+        "required": [
+          "TRG_TYPE",
+          "BEGIN_YEAR",
+          "BEGIN_MONTH",
+          "END_YEAR",
+          "END_MONTH"
+        ],
+        "type": "object",
+        "properties": {
+          "TRG_TYPE": {
+            "type": "string"
+          },
+          "BEGIN_YEAR": {
+            "type": "integer"
+          },
+          "BEGIN_MONTH": {
+            "type": "integer"
+          },
+          "END_YEAR": {
+            "type": "integer"
+          },
+          "END_MONTH": {
+            "type": "integer"
+          },
+          "COMP_NAME": {
+            "type": "string"
+          },
+          "DEP_NAME": {
+            "type": "string"
+          },
+          "TRG_NAME": {
+            "type": "string"
+          },
+          "TRG_GRP": {
+            "type": "string"
+          }
+        }
+      },
+      "DeleteCompanyCommand": {
+        "type": "object",
+        "properties": {
+          "ID": {
+            "type": "integer"
+          }
+        }
+      },
+      "DeleteDeptCommand": {
+        "required": [
+          "DEP_NAME"
+        ],
+        "type": "object",
+        "properties": {
+          "ID": {
+            "type": "integer"
+          },
+          "DEP_NAME": {
+            "type": "string"
+          },
+          "PARENT_ID": {
+            "type": "integer"
+          },
+          "DESCRIP": {
+            "type": "string"
+          },
+          "ORDER_NUM": {
+            "type": "integer"
+          },
+          "OPEN_DATE": {
+            "type": "string"
+          },
+          "EXPIR_DATE": {
+            "type": "string"
+          }
+        }
+      },
+      "DeleteLoginUserCommand": {
+        "required": [
+          "LOGIN_ID"
+        ],
+        "type": "object",
+        "properties": {
+          "LOGIN_ID": {
+            "type": "string"
+          }
+        }
+      },
+      "DeleteRoleCommand": {
+        "type": "object",
+        "properties": {
+          "ID": {
+            "type": "integer"
+          }
+        }
+      },
+      "DeleteRoleProgramCommand": {
+        "type": "object",
+        "properties": {
+          "ID": {
+            "type": "integer"
+          }
+        }
+      },
+      "DeptDto": {
+        "properties": {
+          "ID": {
+            "type": "integer"
+          },
+          "DEP_NAME": {
+            "type": "string"
+          },
+          "PARENT_ID": {
+            "type": "integer"
+          },
+          "DESCRIP": {
+            "type": "string"
+          },
+          "ORDER_NUM": {
+            "type": "integer"
+          },
+          "OPEN_DATE": {
+            "type": "string"
+          },
+          "EXPIR_DATE": {
+            "type": "string"
+          },
+          "MOD_USER": {
+            "type": "string"
+          }
+        }
+      },
+      "ErrorCodes": {
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "type": "integer",
+        "description": "0:Error,1:DataChanged,2:ColumnNull,3:Duplicate,4:DataDeleted,5:NotFounded,6:Exception",
+        "format": "int32"
+      },
+      "ExportFileResult": {
+        "properties": {
+          "FileName": {
+            "type": "string"
+          },
+          "FileContent": {
+            "type": "string"
+          }
+        }
+      },
+      "ExportReportOptionDto": {
+        "properties": {
+          "TRG_TYPE": {
+            "type": "string"
+          },
+          "REPORT_KIND": {
+            "type": "string"
+          },
+          "REPORT_NAME": {
+            "type": "string"
+          },
+          "EXPORT_FILE": {
+            "type": "string"
+          },
+          "REPORT_TITLE": {
+            "type": "string"
+          }
+        }
+      },
+      "ExportRequest": {
+        "type": "object",
+        "properties": {
+          "BEGIN_YEAR": {
+            "type": "integer"
+          },
+          "BEGIN_MONTH": {
+            "type": "integer"
+          },
+          "END_YEAR": {
+            "type": "integer"
+          },
+          "END_MONTH": {
+            "type": "integer"
+          },
+          "FINCOMP_ID": {
+            "type": "integer"
+          },
+          "REPORT_KIND": {
+            "type": "string"
+          },
+          "TRG_TYPE": {
+            "type": "string"
+          },
+          "VALUE_KIND": {
+            "type": "string"
+          },
+          "FINCOMP_NAME": {
+            "type": "string"
+          },
+          "VALUE_KIND_NAME": {
+            "type": "string"
+          }
+        }
+      },
+      "ExportValueOptionDto": {
+        "properties": {
+          "VALUE_KIND": {
+            "type": "string"
+          },
+          "VALUE_KINDNAME": {
+            "type": "string"
+          }
+        }
+      },
+      "GetCodesRequest": {
+        "type": "object"
+      },
+      "GetCompaniesRequest": {
+        "type": "object",
+        "properties": {
+          "ACTIVE_DATE": {
+            "type": "string"
+          }
+        }
+      },
+      "GetCompanyOptionsRequest": {
+        "type": "object"
+      },
+      "GetDeletePreviewRequest": {
+        "required": [
+          "TRG_TYPE",
+          "BEGIN_YEAR",
+          "BEGIN_MONTH",
+          "END_YEAR",
+          "END_MONTH"
+        ],
+        "type": "object",
+        "properties": {
+          "TRG_TYPE": {
+            "type": "string"
+          },
+          "BEGIN_YEAR": {
+            "type": "integer"
+          },
+          "BEGIN_MONTH": {
+            "type": "integer"
+          },
+          "END_YEAR": {
+            "type": "integer"
+          },
+          "END_MONTH": {
+            "type": "integer"
+          },
+          "COMP_NAME": {
+            "type": "string"
+          },
+          "DEP_NAME": {
+            "type": "string"
+          },
+          "TRG_NAME": {
+            "type": "string"
+          },
+          "TRG_GRP": {
+            "type": "string"
+          }
+        }
+      },
+      "GetDepartmentsRequest": {
+        "type": "object",
+        "properties": {
+          "ACTIVE_DATE": {
+            "type": "string"
+          }
+        }
+      },
+      "GetExportReportOptionsRequest": {
+        "type": "object",
+        "properties": {
+          "TRG_TYPE": {
+            "type": "string"
+          }
+        }
+      },
+      "GetExportValueOptionsRequest": {
+        "type": "object"
+      },
+      "GetImportOptionsRequest": {
+        "type": "object"
+      },
+      "GetLoginUsersRequest": {
+        "type": "object"
+      },
+      "GetPeriodYearsRequest": {
+        "type": "object"
+      },
+      "GetProgramsRequest": {
+        "type": "object"
+      },
+      "GetRoleProgramsRequest": {
+        "type": "object",
+        "properties": {
+          "ROLE_ID": {
+            "type": "integer"
+          }
+        }
+      },
+      "GetRolesRequest": {
+        "type": "object"
+      },
+      "GetUserInfoRequest": {
+        "type": "object"
+      },
+      "ImportCommand": {
+        "required": [
+          "TRG_TYPE"
+        ],
+        "type": "object",
+        "properties": {
+          "TRG_TYPE": {
+            "type": "string"
+          },
+          "VALUE_KIND": {
+            "type": "string"
+          },
+          "UploadFile": {
+            "type": "string"
+          }
+        }
+      },
+      "ImportOptionDto": {
+        "properties": {
+          "VALUE_KIND": {
+            "type": "string"
+          },
+          "VALUE_KINDNAME": {
+            "type": "string"
+          }
+        }
+      },
+      "LoginUserDto": {
+        "properties": {
+          "LOGIN_ID": {
+            "type": "string"
+          },
+          "USER_IN_ROLE": {
+            "type": "string"
+          },
+          "USER_IN_COMPANY": {
+            "type": "string"
+          }
+        }
+      },
+      "MainDataDeletePreviewDto": {
+        "properties": {
+          "TRG_TYPE": {
+            "type": "string"
+          },
+          "COMP_NAME": {
+            "type": "string"
+          },
+          "DEP_NAME": {
+            "type": "string"
+          },
+          "TRG_NAME": {
+            "type": "string"
+          },
+          "TRG_GRP": {
+            "type": "string"
+          },
+          "PERIOD_YEAR": {
+            "type": "integer"
+          },
+          "PERIOD_MONTH": {
+            "type": "integer"
+          },
+          "INCOME_ACT": {
+            "type": "number"
+          },
+          "INCOME_EST": {
+            "type": "number"
+          },
+          "GROSS_ACT": {
+            "type": "number"
+          },
+          "GROSS_EST": {
+            "type": "number"
+          }
+        }
+      },
+      "MoveDeptCommand": {
+        "required": [
+          "DEP_NAME"
+        ],
+        "type": "object",
+        "properties": {
+          "ID": {
+            "type": "integer"
+          },
+          "DEP_NAME": {
+            "type": "string"
+          },
+          "PARENT_ID": {
+            "type": "integer"
+          },
+          "DESCRIP": {
+            "type": "string"
+          },
+          "ORDER_NUM": {
+            "type": "integer"
+          },
+          "OPEN_DATE": {
+            "type": "string"
+          },
+          "EXPIR_DATE": {
+            "type": "string"
+          }
+        }
+      },
+      "ObjectResultModel": {
+        "type": "object",
+        "properties": {
+          "ErrorCode": {
+            "$ref": "#/components/schemas/ErrorCodes"
+          },
+          "Messages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "StackTrace": {
+            "type": "string",
+            "nullable": true
+          },
+          "Success": {
+            "type": "boolean"
+          },
+          "Data": {
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PeriodYearDto": {
+        "properties": {
+          "PERIOD_YEAR": {
+            "type": "string"
+          },
+          "DESCRIP": {
+            "type": "string"
+          }
+        }
+      },
+      "ProcResult": {
+        "type": "object"
+      },
+      "ProgramDto": {
+        "properties": {
+          "ID": {
+            "type": "integer"
+          },
+          "PRG_CODE": {
+            "type": "string"
+          },
+          "PRG_NAME": {
+            "type": "string"
+          },
+          "ORDER_NUM": {
+            "type": "integer"
+          },
+          "PARENT_ID": {
+            "type": "integer"
+          },
+          "IS_SYSPRG": {
+            "type": "boolean"
+          }
+        }
+      },
+      "ResultModelExportFileResult": {
+        "type": "object",
+        "properties": {
+          "ErrorCode": {
+            "$ref": "#/components/schemas/ErrorCodes"
+          },
+          "Success": {
+            "type": "boolean"
+          },
+          "Messages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "Data": {
+            "$ref": "#/components/schemas/ExportFileResult"
+          }
+        }
+      },
+      "ResultModelListAppRoleDto": {
+        "type": "object",
+        "properties": {
+          "ErrorCode": {
+            "$ref": "#/components/schemas/ErrorCodes"
+          },
+          "Success": {
+            "type": "boolean"
+          },
+          "Messages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "Data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AppRoleDto"
+            }
+          }
+        }
+      },
+      "ResultModelListAppRolePrgDto": {
+        "type": "object",
+        "properties": {
+          "ErrorCode": {
+            "$ref": "#/components/schemas/ErrorCodes"
+          },
+          "Success": {
+            "type": "boolean"
+          },
+          "Messages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "Data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AppRolePrgDto"
+            }
+          }
+        }
+      },
+      "ResultModelListCodeDto": {
+        "type": "object",
+        "properties": {
+          "ErrorCode": {
+            "$ref": "#/components/schemas/ErrorCodes"
+          },
+          "Success": {
+            "type": "boolean"
+          },
+          "Messages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "Data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CodeDto"
+            }
+          }
+        }
+      },
+      "ResultModelListCompanyDto": {
+        "type": "object",
+        "properties": {
+          "ErrorCode": {
+            "$ref": "#/components/schemas/ErrorCodes"
+          },
+          "Success": {
+            "type": "boolean"
+          },
+          "Messages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "Data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CompanyDto"
+            }
+          }
+        }
+      },
+      "ResultModelListCompanyOptionDto": {
+        "type": "object",
+        "properties": {
+          "ErrorCode": {
+            "$ref": "#/components/schemas/ErrorCodes"
+          },
+          "Success": {
+            "type": "boolean"
+          },
+          "Messages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "Data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CompanyOptionDto"
+            }
+          }
+        }
+      },
+      "ResultModelListDeptDto": {
+        "type": "object",
+        "properties": {
+          "ErrorCode": {
+            "$ref": "#/components/schemas/ErrorCodes"
+          },
+          "Success": {
+            "type": "boolean"
+          },
+          "Messages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "Data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DeptDto"
+            }
+          }
+        }
+      },
+      "ResultModelListExportReportOptionDto": {
+        "type": "object",
+        "properties": {
+          "ErrorCode": {
+            "$ref": "#/components/schemas/ErrorCodes"
+          },
+          "Success": {
+            "type": "boolean"
+          },
+          "Messages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "Data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ExportReportOptionDto"
+            }
+          }
+        }
+      },
+      "ResultModelListExportValueOptionDto": {
+        "type": "object",
+        "properties": {
+          "ErrorCode": {
+            "$ref": "#/components/schemas/ErrorCodes"
+          },
+          "Success": {
+            "type": "boolean"
+          },
+          "Messages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "Data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ExportValueOptionDto"
+            }
+          }
+        }
+      },
+      "ResultModelListImportOptionDto": {
+        "type": "object",
+        "properties": {
+          "ErrorCode": {
+            "$ref": "#/components/schemas/ErrorCodes"
+          },
+          "Success": {
+            "type": "boolean"
+          },
+          "Messages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "Data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ImportOptionDto"
+            }
+          }
+        }
+      },
+      "ResultModelListLoginUserDto": {
+        "type": "object",
+        "properties": {
+          "ErrorCode": {
+            "$ref": "#/components/schemas/ErrorCodes"
+          },
+          "Success": {
+            "type": "boolean"
+          },
+          "Messages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "Data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LoginUserDto"
+            }
+          }
+        }
+      },
+      "ResultModelListMainDataDeletePreviewDto": {
+        "type": "object",
+        "properties": {
+          "ErrorCode": {
+            "$ref": "#/components/schemas/ErrorCodes"
+          },
+          "Success": {
+            "type": "boolean"
+          },
+          "Messages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "Data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MainDataDeletePreviewDto"
+            }
+          }
+        }
+      },
+      "ResultModelListPeriodYearDto": {
+        "type": "object",
+        "properties": {
+          "ErrorCode": {
+            "$ref": "#/components/schemas/ErrorCodes"
+          },
+          "Success": {
+            "type": "boolean"
+          },
+          "Messages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "Data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PeriodYearDto"
+            }
+          }
+        }
+      },
+      "ResultModelListProgramDto": {
+        "type": "object",
+        "properties": {
+          "ErrorCode": {
+            "$ref": "#/components/schemas/ErrorCodes"
+          },
+          "Success": {
+            "type": "boolean"
+          },
+          "Messages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "Data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProgramDto"
+            }
+          }
+        }
+      },
+      "ResultModelProcResult": {
+        "type": "object",
+        "properties": {
+          "ErrorCode": {
+            "$ref": "#/components/schemas/ErrorCodes"
+          },
+          "Success": {
+            "type": "boolean"
+          },
+          "Messages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "Data": {
+            "$ref": "#/components/schemas/ProcResult"
+          }
+        }
+      },
+      "ResultModelUserDto": {
+        "type": "object",
+        "properties": {
+          "ErrorCode": {
+            "$ref": "#/components/schemas/ErrorCodes"
+          },
+          "Success": {
+            "type": "boolean"
+          },
+          "Messages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "Data": {
+            "$ref": "#/components/schemas/UserDto"
+          }
+        }
+      },
+      "UpdateCodeCommand": {
+        "type": "object",
+        "properties": {
+          "CODE_ID": {
+            "type": "string"
+          },
+          "CODE_NAME": {
+            "type": "string"
+          },
+          "CODE_VALUE": {
+            "type": "string"
+          },
+          "CODE_VALUE2": {
+            "type": "string"
+          }
+        }
+      },
+      "UpdateCompanyCommand": {
+        "required": [
+          "COMP_NAME"
+        ],
+        "type": "object",
+        "properties": {
+          "ID": {
+            "type": "integer"
+          },
+          "COMP_NAME": {
+            "type": "string"
+          },
+          "ORDER_NUM": {
+            "type": "integer"
+          },
+          "OPEN_DATE": {
+            "type": "string"
+          },
+          "EXPIR_DATE": {
+            "type": "string"
+          }
+        }
+      },
+      "UpdateDeptCommand": {
+        "required": [
+          "DEP_NAME"
+        ],
+        "type": "object",
+        "properties": {
+          "ID": {
+            "type": "integer"
+          },
+          "DEP_NAME": {
+            "type": "string"
+          },
+          "PARENT_ID": {
+            "type": "integer"
+          },
+          "DESCRIP": {
+            "type": "string"
+          },
+          "ORDER_NUM": {
+            "type": "integer"
+          },
+          "OPEN_DATE": {
+            "type": "string"
+          },
+          "EXPIR_DATE": {
+            "type": "string"
+          }
+        }
+      },
+      "UpdateLoginUserCommand": {
+        "required": [
+          "LOGIN_ID"
+        ],
+        "type": "object",
+        "properties": {
+          "LOGIN_ID": {
+            "type": "string"
+          },
+          "USER_IN_ROLE": {
+            "type": "string"
+          },
+          "USER_IN_COMPANY": {
+            "type": "string"
+          }
+        }
+      },
+      "UpdateRoleCommand": {
+        "required": [
+          "ROLE_NAME"
+        ],
+        "type": "object",
+        "properties": {
+          "ID": {
+            "type": "integer"
+          },
+          "ROLE_NAME": {
+            "type": "string"
+          },
+          "DESCRIP": {
+            "type": "string"
+          },
+          "IS_SYSPRG": {
+            "type": "boolean"
+          }
+        }
+      },
+      "UserDto": {
+        "properties": {
+          "LOGIN_ID": {
+            "type": "string"
+          },
+          "USER_NAME": {
+            "type": "string"
+          },
+          "USER_EMAIL": {
+            "type": "string"
+          },
+          "Roles": {
+            "type": "object"
+          },
+          "PrgCodes": {
+            "type": "object"
+          }
+        }
+      }
+    }
+  }
+}
