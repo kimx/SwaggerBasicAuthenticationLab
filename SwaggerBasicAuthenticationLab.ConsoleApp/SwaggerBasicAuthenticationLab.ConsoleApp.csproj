@@ -19,7 +19,7 @@
       <Namespace>SwaggerBasicAuthenticationLab.ConsoleApp.Clients</Namespace>
       <ClassName>{controller}Client</ClassName>
       <OutputPath>$(ProjectDir)/Clients/KimClient.cs</OutputPath>
-      <Options>/DateType:System.DateOnly /generatePrepareRequestAndProcessResponseAsAsyncMethods:true /generateUpdateJsonSerializerSettingsMethod:false /UseBaseUrl:false /ClientBaseClass:BaseClient /ConfigurationClass:ClientConfiguration /jsonLibrary:SystemTextJson /OperationGenerationMode:MultipleClientsFromOperationId</Options>
+      <Options>/useHttpRequestMessageCreationMethod:true /DateType:System.DateOnly /generatePrepareRequestAndProcessResponseAsAsyncMethods:true /generateUpdateJsonSerializerSettingsMethod:false /UseBaseUrl:false /ClientBaseClass:BaseClient /ConfigurationClass:ClientConfiguration /jsonLibrary:SystemTextJson /OperationGenerationMode:MultipleClientsFromOperationId</Options>
     </OpenApiReference>
   </ItemGroup>
 

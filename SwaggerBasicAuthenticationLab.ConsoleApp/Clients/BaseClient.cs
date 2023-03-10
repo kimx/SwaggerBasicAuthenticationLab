@@ -12,17 +12,19 @@ namespace SwaggerBasicAuthenticationLab.ConsoleApp.Clients
 {
     public class BaseClient
     {
+        public BusyControl Busy { get; set; }
         public BaseClient(ClientConfiguration configuration)
         {
 
         }
         protected void UpdateJsonSerializerSettings(System.Text.Json.JsonSerializerOptions settings)
         {
-           // settings.Converters.Add(new DateOnlyJsonConverter());
+            // settings.Converters.Add(new DateOnlyJsonConverter());
         }
 
         protected Task PrepareRequestAsync(System.Net.Http.HttpClient client, System.Net.Http.HttpRequestMessage request, string url, CancellationToken token)
         {
+            Console.WriteLine("PrepareRequestAsync");
             return Task.CompletedTask;
         }
         protected Task PrepareRequestAsync(System.Net.Http.HttpClient client, System.Net.Http.HttpRequestMessage request, System.Text.StringBuilder urlBuilder, CancellationToken token)
@@ -31,12 +33,43 @@ namespace SwaggerBasicAuthenticationLab.ConsoleApp.Clients
         }
         protected Task ProcessResponseAsync(System.Net.Http.HttpClient client, System.Net.Http.HttpResponseMessage response, CancellationToken token)
         {
+            Console.WriteLine("ProcessResponseAsync");
             return Task.CompletedTask;
         }
 
 
+
+        /// <summary>
+        /// 建立Request
+        /// </summary>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        protected async Task<MyHttpRequestMessage> CreateHttpRequestMessageAsync(CancellationToken cancellationToken)
+        {
+            //string accessToken = !string.IsNullOrWhiteSpace(AccessToken) ? AccessToken : UgozConfig.AccessToken;
+            Busy.IsBusy = true;
+            var request = new MyHttpRequestMessage(Busy);
+            //request.Headers.Add("Authorization", $"Bearer {accessToken}");
+            return await Task.FromResult(request);
+        }
+
     }
 
+    public class MyHttpRequestMessage : HttpRequestMessage
+    {
+        private BusyControl Busy { get; set; }
+        public MyHttpRequestMessage(BusyControl busy)
+        {
+            Busy = busy;
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            Busy.IsBusy= false;
+            base.Dispose(disposing);
+        }
+
+    }
 
     public class DateOnlyJsonConverter : JsonConverter<System.DateOnly>
     {

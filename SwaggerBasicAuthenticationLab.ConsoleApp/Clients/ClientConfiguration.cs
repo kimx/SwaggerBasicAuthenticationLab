@@ -9,4 +9,20 @@ namespace SwaggerBasicAuthenticationLab.ConsoleApp.Clients
     public class ClientConfiguration
     {
     }
+
+    public class BusyControl
+    {
+        private bool isBusy;
+
+        public bool IsBusy
+        {
+            get { return isBusy; }
+            set
+            {
+                Console.WriteLine(value);
+                isBusy = value;
+            }
+        }
+
+    }
 }
