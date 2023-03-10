@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using SwaggerBasicAuthenticationLab;
 
@@ -34,8 +35,9 @@ builder.Services.AddSwaggerGen(c =>
                                 }
                             },
                             new string[] {}
-                    }
+        }
                 });
+    c.MapType<DateOnly>(() => new OpenApiSchema { Format = "date", Type = "string" });
 });
 
 //4.加入驗證處理者

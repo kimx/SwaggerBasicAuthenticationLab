@@ -3,11 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace SwaggerBasicAuthenticationLab.Controllers
 {
-    //2.«a¤WÅçÃÒ
-    [Authorize()]
     [ApiController]
-    [Route("api/WeatherForecast")]
-    public class WeatherForecastController : ControllerBase
+    [Route("api/Gak")]
+    public class GakController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
         {
@@ -16,12 +14,12 @@ namespace SwaggerBasicAuthenticationLab.Controllers
 
         private readonly ILogger<WeatherForecastController> _logger;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public GakController(ILogger<WeatherForecastController> logger)
         {
             _logger = logger;
         }
 
-        [HttpGet("GetWeatherForecast",Name= "WeatherForecast_GetWeatherForecast")]
+        [HttpGet("GetList", Name = "Gak_GetList")]
         public IEnumerable<WeatherForecast> Get()
         {
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
@@ -33,16 +31,6 @@ namespace SwaggerBasicAuthenticationLab.Controllers
             .ToArray();
         }
 
-        [HttpGet("GetWeatherForecast2")]
-        public IEnumerable<WeatherForecast> GetWeatherForecast2()
-        {
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-            })
-            .ToArray();
-        }
+     
     }
 }

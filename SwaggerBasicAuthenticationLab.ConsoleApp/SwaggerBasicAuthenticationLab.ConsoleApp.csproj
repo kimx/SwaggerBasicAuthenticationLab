@@ -14,12 +14,12 @@
   </ItemGroup>
   
   <ItemGroup>
-    <OpenApiReference Include="Clients\swagger.json" SourceUrl="https://localhost:7035/swagger/MTG_Financial/swagger.json">
+    <OpenApiReference Include="Clients\swagger.json" SourceUrl="https://localhost:7172/swagger/v1/swagger.json">
       <CodeGenerator>NSwagCSharp</CodeGenerator>
       <Namespace>SwaggerBasicAuthenticationLab.ConsoleApp.Clients</Namespace>
-      <ClassName>KimClient</ClassName>
+      <ClassName>{controller}Client</ClassName>
       <OutputPath>$(ProjectDir)/Clients/KimClient.cs</OutputPath>
-      <Options>/UseBaseUrl:false /ClientBaseClass:BaseClient /ConfigurationClass:ClientConfiguration /jsonLibrary:SystemTextJson</Options>
+      <Options>/DateType:System.DateOnly /generatePrepareRequestAndProcessResponseAsAsyncMethods:true /generateUpdateJsonSerializerSettingsMethod:false /UseBaseUrl:false /ClientBaseClass:BaseClient /ConfigurationClass:ClientConfiguration /jsonLibrary:SystemTextJson /OperationGenerationMode:MultipleClientsFromOperationId</Options>
     </OpenApiReference>
   </ItemGroup>
 
@@ -27,6 +27,6 @@
     <Delete Files="$(ProjectDir)/Clients/KimClient.cs" />
   </Target>
   <Target Name="RefreshDoc" AfterTargets="PostClean" Condition="'$(Configuration)' == 'Debug'">
-    <Exec Command="dotnet openapi refresh https://localhost:7035/swagger/MTG_Financial/swagger.json -p SwaggerBasicAuthenticationLab.ConsoleApp.csproj" />
+    <Exec Command="dotnet openapi refresh https://localhost:7172/swagger/v1/swagger.json -p SwaggerBasicAuthenticationLab.ConsoleApp.csproj" />
   </Target>
 </Project>
